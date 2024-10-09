@@ -1,0 +1,8 @@
+fastapi==0.109.1
+uvicorn==0.21.1
+psycopg2-binary
+python-dotenv
+debugpy
+python-multipart
+python-jose==3.3.0
+bcrypt==4.0.1

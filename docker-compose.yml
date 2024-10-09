@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:16-bullseye
+    volumes:
+      - ./expenses-backend/setup/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    environment:
+      POSTGRES_DB: sqli-demo
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5455:5432"
+    networks:
+      - demonet
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5051:80"
+    networks:
+      - demonet
+    depends_on:
+      - postgres
+
+  sqli_demo:
+    build:
+      context: ./expenses-backend/
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+      - "5678:5678"
+    env_file:
+      - ./expenses-backend/.env
+    networks:
+      - demonet
+    depends_on:
+      - postgres
+    volumes:
+      - './expenses-backend/data/logs:/logs'
+
+  frontend:
+    build:
+      context: ./expenses-frontend/
+      dockerfile: Dockerfile
+    volumes:
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "3000:80" # Expose the frontend on port 3000
+    restart: unless-stopped
+
+networks:
+  demonet:
+      driver: bridge

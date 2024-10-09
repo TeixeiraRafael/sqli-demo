@@ -1,0 +1,25 @@
+Rent,Monthly Rent,200,bills,2024-10-01
+Credit card,monthly credit card,300,bills,2024-10-01
+New bass strings,entertainment,20,entertainment,2024-10-02
+Movie night,entertainment,10,entertainment,2024-10-02
+Movie night,entertainment,10,entertainment,2024-10-09
+Movie night,entertainment,10,entertainment,2024-10-16
+Movie night,entertainment,10,entertainment,2024-10-23
+Movie night,entertainment,10,entertainment,2024-10-30
+Groceries,weekly groceries,50,food,2024-10-02
+Groceries,weekly groceries,60,food,2024-10-09
+Groceries,weekly groceries,45,food,2024-10-16
+Groceries,weekly groceries,30,food,2024-10-23
+Groceries,weekly groceries,77,food,2024-10-30
+Groceries,weekly groceries,20,food,2024-10-02
+Rent,Monthly Rent,200,bills,2024-09-01
+Credit card,monthly credit card,300,bills,2024-09-01
+Movie night,entertainment,10,entertainment,2024-09-02
+Movie night,entertainment,10,entertainment,2024-09-23
+Movie night,entertainment,10,entertainment,2024-09-30
+Groceries,weekly groceries,33,food,2024-09-02
+Groceries,weekly groceries,80,food,2024-09-09
+Groceries,weekly groceries,47,food,2024-09-16
+Groceries,weekly groceries,12,food,2024-09-23
+Groceries,weekly groceries,77,food,2024-09-30
+Groceries,weekly groceries,30,food '||(SELECT current_database())||',2024-11-02
